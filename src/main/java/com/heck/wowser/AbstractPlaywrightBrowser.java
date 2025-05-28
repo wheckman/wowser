@@ -1,6 +1,7 @@
 package com.heck.wowser;
 
 import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Playwright;
 import lombok.Getter;
 import lombok.Setter;
@@ -59,5 +60,10 @@ public abstract class AbstractPlaywrightBrowser {
      *
      * @return An instance of the Browser class representing the launched browser.
      */
-    protected abstract Browser launchBrowser();
+    protected abstract BrowserContext launchBrowser();
+
+    protected Browser.NewContextOptions getGeneralBrowserOptions() {
+        return new Browser.NewContextOptions()
+                .setJavaScriptEnabled(true);
+    }
 }

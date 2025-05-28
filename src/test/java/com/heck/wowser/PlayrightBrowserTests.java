@@ -1,6 +1,7 @@
 package com.heck.wowser;
 
 import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class PlayrightBrowserTests {
         assertFalse(chromeBrowser.isHeadless());
         assertEquals(AbstractPlaywrightBrowser.BrowserName.CHROME, chromeBrowser.getBrowserName());
 
-        Browser browser = chromeBrowser.launchBrowser();
+        BrowserContext browser = chromeBrowser.launchBrowser();
 
         Page page = browser.newPage();
         page.navigate("https://amiunique.org/fingerprint");
@@ -28,7 +29,7 @@ public class PlayrightBrowserTests {
         assertFalse(firefoxBrowser.isHeadless());
         assertEquals(AbstractPlaywrightBrowser.BrowserName.FIREFOX, firefoxBrowser.getBrowserName());
 
-        Browser browser = firefoxBrowser.launchBrowser();
+        BrowserContext browser = firefoxBrowser.launchBrowser();
 
         Page page = browser.newPage();
         page.navigate("https://amiunique.org/fingerprint");
@@ -42,7 +43,7 @@ public class PlayrightBrowserTests {
         assertFalse(webkitBrowser.isHeadless());
         assertEquals(AbstractPlaywrightBrowser.BrowserName.WEBKIT, webkitBrowser.getBrowserName());
 
-        Browser browser = webkitBrowser.launchBrowser();
+        BrowserContext browser = webkitBrowser.launchBrowser();
         Page page = browser.newPage();
         page.navigate("https://amiunique.org/fingerprint");
         assertEquals("My Fingerprint- Am I Unique ?", page.title());
