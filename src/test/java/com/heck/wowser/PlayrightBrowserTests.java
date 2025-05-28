@@ -12,6 +12,7 @@ public class PlayrightBrowserTests {
     public void testCromeBrowser() {
         ChromePlaywrightBrowser chromeBrowser = new ChromePlaywrightBrowser();
         assertFalse(chromeBrowser.isHeadless());
+        assertEquals(AbstractPlaywrightBrowser.BrowserName.CHROME, chromeBrowser.getBrowserName());
 
         Browser browser = chromeBrowser.launchBrowser();
 
@@ -25,6 +26,7 @@ public class PlayrightBrowserTests {
     public void testFirefoxBrowser() {
         FirefoxPlaywrightBrowser firefoxBrowser = new FirefoxPlaywrightBrowser();
         assertFalse(firefoxBrowser.isHeadless());
+        assertEquals(AbstractPlaywrightBrowser.BrowserName.FIREFOX, firefoxBrowser.getBrowserName());
 
         Browser browser = firefoxBrowser.launchBrowser();
 
@@ -38,6 +40,7 @@ public class PlayrightBrowserTests {
     public void testWebkitBrowser() {
         WebkitPlaywrightBrowser webkitBrowser = new WebkitPlaywrightBrowser();
         assertFalse(webkitBrowser.isHeadless());
+        assertEquals(AbstractPlaywrightBrowser.BrowserName.WEBKIT, webkitBrowser.getBrowserName());
 
         Browser browser = webkitBrowser.launchBrowser();
         Page page = browser.newPage();
