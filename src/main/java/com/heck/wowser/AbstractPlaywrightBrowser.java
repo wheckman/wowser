@@ -24,6 +24,17 @@ public abstract class AbstractPlaywrightBrowser {
     protected boolean headless = false;
 
     /**
+     * Indicates whether JavaScript is enabled in the browser.
+     * Default is true, meaning JavaScript will be executed in the browser.
+     * <p>
+     * This variable can be set to false to disable JavaScript execution,
+     * which may be useful for testing purposes or when JavaScript is not needed.
+     */
+    @Getter
+    @Setter
+    protected boolean javaScriptEnabled = true;
+
+    /**
      * Instance of the Playwright class used to interact with and manage browser operations.
      * This variable serves as the primary entry point for creating browser instances
      * in specific implementations of the AbstractPlaywrightBrowser class.
@@ -64,6 +75,6 @@ public abstract class AbstractPlaywrightBrowser {
 
     protected Browser.NewContextOptions getGeneralBrowserOptions() {
         return new Browser.NewContextOptions()
-                .setJavaScriptEnabled(true);
+                .setJavaScriptEnabled(isJavaScriptEnabled());
     }
 }
