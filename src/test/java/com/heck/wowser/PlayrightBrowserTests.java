@@ -17,8 +17,8 @@ public class PlayrightBrowserTests {
         Browser browser = chromeBrowser.launchBrowser();
 
         Page page = browser.newPage();
-        page.navigate("https://www.google.com");
-        assertEquals("Google", page.title());
+        page.navigate("https://amiunique.org/fingerprint");
+        assertEquals("My Fingerprint- Am I Unique ?", page.title());
         browser.close();
     }
 
@@ -31,8 +31,8 @@ public class PlayrightBrowserTests {
         Browser browser = firefoxBrowser.launchBrowser();
 
         Page page = browser.newPage();
-        page.navigate("https://www.google.com");
-        assertEquals("Google", page.title());
+        page.navigate("https://amiunique.org/fingerprint");
+        assertEquals("My Fingerprint- Am I Unique ?", page.title());
         browser.close();
     }
 
@@ -44,8 +44,8 @@ public class PlayrightBrowserTests {
 
         Browser browser = webkitBrowser.launchBrowser();
         Page page = browser.newPage();
-        page.navigate("https://www.google.com");
-        assertEquals("Google", page.title());
+        page.navigate("https://amiunique.org/fingerprint");
+        assertEquals("My Fingerprint- Am I Unique ?", page.title());
         browser.close();
     }
 }
