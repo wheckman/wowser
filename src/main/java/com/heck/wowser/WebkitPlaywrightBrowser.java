@@ -21,7 +21,7 @@ public class WebkitPlaywrightBrowser extends AbstractPlaywrightBrowser {
         var launchoptions = new BrowserType.LaunchOptions()
                 .setHeadless(isHeadless());
 
-        return this.browser.chromium().launch(launchoptions).newContext(getGeneralBrowserOptions());
+        return this.browser.webkit().launch(launchoptions).newContext(getGeneralBrowserOptions());
     }
 }
 

@@ -21,9 +21,7 @@ public class FirefoxPlaywrightBrowser extends AbstractPlaywrightBrowser {
                 .setHeadless(isHeadless())
                 .setChannel("firefox");
 
-        return this.browser.chromium().launch(launchoptions).newContext(getGeneralBrowserOptions());
+        return this.browser.firefox().launch(launchoptions).newContext(getGeneralBrowserOptions());
     }
-
-
 }
 

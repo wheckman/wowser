@@ -1,6 +1,5 @@
 package com.heck.wowser;
 
-import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import org.junit.Test;
@@ -9,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class PlayrightBrowserTests {
+
     @Test
     public void testCromeBrowser() {
         ChromePlaywrightBrowser chromeBrowser = new ChromePlaywrightBrowser();
